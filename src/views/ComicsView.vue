@@ -11,7 +11,7 @@ import CardComponent from '../components/CardComponent.vue';
         <li class="breadcrumb-item active" aria-current="page">
           <div class="d-flex gap-2 align-items-center">
             <Home width="16" height="16"/>
-            <span class="fw-normal">Home</span>
+            <span class="fw-normal">Comics</span>
           </div>
         </li>
       </ol>
