@@ -1,41 +1,28 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterView } from 'vue-router'
+import NavBar from '@/components/NavBar.vue';
+
+
+
 </script>
 
 <template>
-  <h1 class="color-primary-red">pao</h1>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <div class="d-flex flex-column h-100">
+    <NavBar />
+  
+    <RouterView class="flex-fill"/>
+  </div>
 </template>
 
 <style lang="scss">
+@import './assets/scss/colors.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
-
-.color-primary-red {
-  color: #EC1D24;
+html, body {
+  font-family: 'Roboto', sans-serif;
 }
 
-.bg-primary-red {
-  background-color: #EC1D24;
+.gap-2rem {
+  gap: 2rem;
 }
-
-.bg-secondary-red {
-  background-color: #9F0013;
-}
-
-
-
 </style>

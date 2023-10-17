@@ -1,0 +1,72 @@
+$primary-red: #EC1D24;
+$secondary-red: #9F0013;
+$black: #000000;
+$gray-400: #151515;
+$gray-300: #202020;
+$gray-200: #767676;
+$gray-100: #CCCCCC;
+$white: #FFFFFF;
+
+.color-primary-red {
+  color: $primary-red;
+}
+
+.bg-primary-red {
+  background-color: $primary-red;
+}
+
+.color-secondary-red {
+  color: $secondary-red;
+}
+
+.bg-secondary-red {
+  background-color: $secondary-red;
+}
+
+.color-black {
+  color: $black;
+}
+
+.bg-black {
+  background-color: $black;
+}
+
+.color-gray-400 {
+  color: $gray-400;
+}
+
+.bg-gray-400 {
+  background-color: $gray-400;
+}
+
+.color-gray-300 {
+  color: $gray-300;
+}
+
+.bg-gray-300 {
+  background-color: $gray-300;
+}
+
+.color-gray-200 {
+  color: $gray-200;
+}
+
+.bg-gray-200 {
+  background-color: $gray-200;
+}
+
+.color-gray-100 {
+  color: $gray-100;
+}
+
+.bg-gray-100 {
+  background-color: $gray-100;
+}
+
+.color-white {
+  color: $white;
+}
+
+.bg-white {
+  background-color: $white;
+}
