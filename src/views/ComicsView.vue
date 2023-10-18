@@ -2,6 +2,15 @@
 import Home from '@/components/icons/Home.vue';
 import CardComponent from '../components/CardComponent.vue';
 
+import { getComics } from '@/api/api';
+
+import { ref } from 'vue';
+
+const data = await getComics();
+
+const comics = ref(data.results);
+
+
 </script>
 
 <template>
@@ -18,7 +27,16 @@ import CardComponent from '../components/CardComponent.vue';
     </nav>
 
     <div class="d-flex flex-wrap justify-content-between gap-4">
-      <CardComponent v-for="item in 10" :key="item" description="true"/>
+      <CardComponent 
+        v-for="comic in comics" 
+        :key="comic.id"
+        :title="comic.title"
+        :thumbnail="comic.thumbnail"
+        :id="comic.id"
+        :description="'PAGES: ' + comic.pageCount"
+        vertical-image
+        is-comic
+      />
     </div>
 
   </main>

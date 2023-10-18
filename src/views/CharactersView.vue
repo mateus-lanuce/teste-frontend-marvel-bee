@@ -2,6 +2,17 @@
 import Home from '@/components/icons/Home.vue';
 import CardComponent from '../components/CardComponent.vue';
 
+import { getCharacters } from '@/api/api';
+import { ref } from 'vue';
+
+const data = await getCharacters();
+
+console.log(data);
+
+const characters = ref(data.results);
+
+console.log(characters)
+
 </script>
 
 <template>
@@ -18,7 +29,13 @@ import CardComponent from '../components/CardComponent.vue';
     </nav>
 
     <div class="d-flex flex-wrap justify-content-between gap-4">
-      <CardComponent v-for="item in 10" :key="item" />
+      <CardComponent 
+        v-for="character in characters" 
+        :key="character.id"
+        :title="character.name"
+        :thumbnail="character.thumbnail"
+        :id="character.id"
+      />
     </div>
 
   </main>

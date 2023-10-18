@@ -1,34 +1,68 @@
 <script setup>
 
-import { defineProps } from 'vue';
+import { computed, defineProps } from 'vue';
 
-defineProps({
+const props = defineProps({
   title: {
     type: String,
-    required: false,
+    required: true,
   },
   description: {
     type: String,
     required: false,
   },
-  image: {
+  thumbnail: {
+    type: Object,
+    required: true,
+  },
+  id : {
+    type: Number,
+    required: true,
+  },
+  initialDate: {
     type: String,
     required: false,
   },
+  finalDate: {
+    type: String,
+    required: false,
+  },
+});
+
+const formatImageURL = computed(() => {
+  return `${props.thumbnail.path}/standard_xlarge.${props.thumbnail.extension}`;
+});
+
+const formatDate = (date) => {
+  const dateArray = date.split(" ")[0].split("-");
+  const year = dateArray[0];
+  const month = dateArray[1];
+  const day = dateArray[2];
+
+  return `${day}/${month}/${year}`;
+}
+
+const formatedDate = computed(() => {
+  if (!props.initialDate || !props.finalDate) {
+    return "No date available";
+  }
+  return `${formatDate(props.initialDate)} - ${formatDate(props.finalDate)}`;
 });
 
 </script>
 
 <template>
   <div class="d-flex flex-row gap-3">
-    <img src="../assets/images/image 3.svg" class="custom-img" alt="hero logo">
+    <img :src="formatImageURL" class="custom-img" alt="hero logo">
 
-    <div class="d-flex flex-column gap-3 text-uppercase">
-      <h4 class="fw-bold">Spider Man</h4>
-      <p class="max-len-text text-overflow-clamp">Loki sets about convincing the super-villains of Earth to attack heroes other than those they normally fight in an attempt to destroy the Avengers to absolve his guilt over inadvertently creating the team in the first place.</p>
+    <div class="d-flex flex-column text-uppercase">
+      <h4 class="fw-bold">{{ title }}</h4>
+      <p class="max-len-text text-overflow-clamp">
+        {{ description }}
+      </p>
       <p>
         <span class="fw-bold">Date of the event:</span> 
-        22/10/2023
+        {{ formatedDate }}
       </p>
     </div>
   </div>

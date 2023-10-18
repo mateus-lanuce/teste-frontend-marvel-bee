@@ -2,6 +2,16 @@
 import Home from '@/components/icons/Home.vue';
 import HorizontalCardComponent from '@/components/HorizontalCardComponent.vue';
 
+import { getEvents } from '@/api/api';
+
+import { ref } from 'vue';
+
+const data = await getEvents();
+
+const events = ref(data.results);
+
+console.log(events)
+
 </script>
 
 <template>
@@ -18,7 +28,16 @@ import HorizontalCardComponent from '@/components/HorizontalCardComponent.vue';
     </nav>
 
     <div class="d-flex flex-wrap justify-content-between gap-4">
-      <HorizontalCardComponent v-for="item in 10" :key="item" />
+      <HorizontalCardComponent 
+        v-for="event in events" 
+        :key="event.id"
+        :title="event.title"
+        :description="event.description"
+        :thumbnail="event.thumbnail"
+        :initialDate="event.start"
+        :finalDate="event.end"
+        :id="event.id"
+      />
     </div>
 
   </main>
