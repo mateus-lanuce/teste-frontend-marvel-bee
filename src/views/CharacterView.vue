@@ -89,6 +89,7 @@ watchEffect(async () => {
               :thumbnail="comic.thumbnail"
               :description="'PAGES: ' + comic.pageCount"
               :id="comic.id"
+              is-comic
               vertical-image
             />
           </div>
