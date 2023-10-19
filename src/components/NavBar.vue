@@ -2,7 +2,7 @@
 import LogoPrimary from '@/components/icons/LogoPrimary.vue';
 import MenuIcon from '@/components/icons/MenuIcon.vue';
 import CloseIcon from '@/components/icons/CloseIcon.vue';
-import { computed, ref } from 'vue';
+import { ref } from 'vue';
 
 
 //pegar a rota atual

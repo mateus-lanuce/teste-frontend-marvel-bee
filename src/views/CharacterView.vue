@@ -61,11 +61,11 @@ watchEffect(async () => {
 
       <div class="row">
 
-        <div class="col-12 col-lg-4">
+        <div class="col-12 col-lg-5 col-xl-4">
           <img :src="mainImg" class="main-img rounded" alt="hero logo">
         </div>
 
-        <div class="col-12 col-lg-8 py-3 py-lg-0">
+        <div class="col-12 col-lg-7 col-xl-8 py-3 py-lg-0">
 
           <div class="d-flex flex-column justify-content-evenly h-100">
             <div class="d-flex flex-column gap-3">
@@ -79,7 +79,7 @@ watchEffect(async () => {
           
         </div>
 
-        <div class="col-12 col-lg-8 offset-lg-4">
+        <div class="col-12 col-lg-7 col-xl-8 offset-lg-5 offset-xl-4">
 
           <div class="d-flex flex-wrap justify-content-between gap-4">
             <CardComponent 
