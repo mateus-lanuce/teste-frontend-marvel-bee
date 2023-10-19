@@ -4,6 +4,7 @@ import CharactersView from '../views/CharactersView.vue'
 import CharacterView from '../views/CharacterView.vue'
 import ComicsView from '../views/ComicsView.vue'
 import EventsView from '../views/EventsView.vue'
+import ContactView from '../views/ContactView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,7 +15,7 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/characters',
+      path: '/characters:page?',
       name: 'characters',
       component: CharactersView
     },
@@ -31,8 +32,17 @@ const router = createRouter({
     {
       path: '/events',
       name: 'events',
-      component: () => import('@/views/EventsView.vue')
+      component: EventsView
     },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: ContactView
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      redirect: { name: 'home' }
+    }
   ]
 })
 

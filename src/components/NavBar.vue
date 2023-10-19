@@ -25,7 +25,7 @@ let route = useRoute()
               <RouterLink 
                 to="/" 
                 class="text-white fs-5 text-decoration-none" 
-                :class="{'border-bottom border-5 border-white p-3 py-4': route.path === '/'}"
+                :class="{'border-bottom border-5 border-white p-3 py-4': route.name === 'home'}"
               >
                 HOME
               </RouterLink>
@@ -33,7 +33,7 @@ let route = useRoute()
               <RouterLink 
                 to="/characters" 
                 class="text-white fs-5 text-decoration-none" 
-                :class="{'border-bottom border-5 border-white p-3': route.path === '/characters'}"
+                :class="{'border-bottom border-5 border-white p-3': route.name === 'characters' || route.name === 'character'}"
               >
                 CHARACTERS
               </RouterLink>
@@ -41,7 +41,7 @@ let route = useRoute()
               <RouterLink 
                 to="/comics" 
                 class="text-white fs-5 text-decoration-none" 
-                :class="{'border-bottom border-5 border-white p-3': route.path === '/comics'}"
+                :class="{'border-bottom border-5 border-white p-3': route.name === 'comics'}"
               >
                 COMICS
               </RouterLink>
@@ -50,7 +50,7 @@ let route = useRoute()
               <RouterLink 
                 to="/events" 
                 class="text-white fs-5 text-decoration-none" 
-                :class="{'border-bottom border-5 border-white p-3': route.path === '/events'}"
+                :class="{'border-bottom border-5 border-white p-3': route.name === 'events'}"
               >
                 EVENTS
               </RouterLink>

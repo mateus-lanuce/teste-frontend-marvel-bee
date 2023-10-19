@@ -1,0 +1,28 @@
+@import 'colors.scss';
+
+.btn-primary-red {
+  @extend .bg-primary-red;
+  @extend .color-white;
+}
+
+.btn-primary-red:hover {
+  @extend .bg-secondary-red;
+  @extend .color-white;
+}
+
+.active-button {
+  @extend .bg-secondary-red;
+  
+}
+
+.btn-primary-red:disabled {
+  @extend .bg-gray-100;
+  
+  //desativar o hover
+  &:hover {
+    @extend .bg-gray-100;
+  }
+
+  //desativar o click
+  
+}

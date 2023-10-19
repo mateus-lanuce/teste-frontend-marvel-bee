@@ -34,6 +34,8 @@ import NavBar from '@/components/NavBar.vue';
 
 <style lang="scss">
 @import './assets/scss/colors.scss';
+@import './assets/scss/buttons.scss';
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 html, body {

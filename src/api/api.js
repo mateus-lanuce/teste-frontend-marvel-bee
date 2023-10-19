@@ -50,6 +50,14 @@ export const getComic = async (id) => {
   return data;
 }
 
+export const getComicByTitle = async (title) => {
+  const response = await fetch(
+    `${baseUrl}/comics?apikey=${publicKey}&titleStartsWith=${title}`,
+  );
+  const { data } = await response.json();
+  return data;
+}
+
 export const getEventsFromCharacter = async (id) => {
   const response = await fetch(
     `${baseUrl}/characters/${id}/events?apikey=${publicKey}`,

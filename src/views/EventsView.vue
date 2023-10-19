@@ -4,13 +4,31 @@ import HorizontalCardComponent from '@/components/HorizontalCardComponent.vue';
 
 import { getEvents } from '@/api/api';
 
-import { ref } from 'vue';
+import { ref, watchEffect } from 'vue';
+import { useRouter } from 'vue-router';
+
+import { usePaginationStore } from '@/stores/pagination';
+import PaginationComponent from '../components/PaginationComponent.vue';
+
+const router = useRouter();
+
+//modificar os valores do store de paginacao
+const paginationStore = usePaginationStore();
 
 const data = await getEvents();
 
 const events = ref(data.results);
 
-console.log(events)
+//watchEffect para observar as mudancas na pagina do store
+watchEffect(async () => {
+  //se a pagina mudar, entao atualiza a rota
+  router.push({ query: { page: paginationStore.page } });
+
+  //se a pagina mudar, entao atualiza os personagens
+  const data = await getEvents(paginationStore.offset);
+
+  events.value = data.results;
+});
 
 </script>
 
@@ -39,6 +57,12 @@ console.log(events)
         :id="event.id"
       />
     </div>
+
+    <!-- paginacao -->
+    <PaginationComponent 
+      class="py-5"  
+      :total="data.total" 
+    />
 
   </main>
 </template>
