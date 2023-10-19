@@ -1,6 +1,6 @@
 # Teste-FrontEnd-marvel
 
-- Esse Projeto foi Feito por mim [Mateus Lanuce](https://github.com/mateus-lanuce) utilizando vue3 e bootstrap v5, usando os dados da marvel [API](https://developer.marvel.com/docs)
+- Esse Projeto foi Feito por mim [Mateus Lanuce](https://github.com/mateus-lanuce) utilizando vue3 e bootstrap 5.3, usando os dados da marvel [API](https://developer.marvel.com/docs)
 - Levou aproximadamente 2 dias para ser finalizado, incluindo toda a responsividade, acessibilidade e SEO.
 - O design foi feito de acordo com o figma dado pela [Bee Delivery](https://www.beedelivery.com.br/) - [Figma design](https://www.figma.com/file/b21cB6Ph702fL11DqwoyWP/Teste-Frontend---Bee-Delivery?type=design&node-id=2-2&mode=design&t=3U9mo2tpqc08ckd9-0)
 - Os requisitos bonus a seguir, assim como todos os obrigatórios, foram atendidos no projeto:
