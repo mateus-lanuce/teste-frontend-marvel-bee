@@ -1,4 +1,4 @@
-const publicKey = 'ddb53947695fa97ba87e4dbd22d0b4fc';
+const publicKey = '65e13e69edf00aaeebe59b52350410f8';
 
 const baseUrl = 'https://gateway.marvel.com:443/v1/public';
 
