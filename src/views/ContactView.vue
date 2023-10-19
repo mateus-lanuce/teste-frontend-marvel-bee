@@ -132,7 +132,7 @@ const isMobile = computed(() => {
           <div class="col-12 col-lg-4">
             <button 
               type="submit" 
-              class="btn btn-primary-red mt-lg-4"
+              class="btn btn-primary-red mt-lg-45 btn-width"
               :class="{ 'w-100': isMobile }"
               :disabled="!meta.valid"
             >
@@ -163,3 +163,9 @@ const isMobile = computed(() => {
 
   </main>
 </template>
+
+<style scoped>
+  .btn-width {
+    width: 96px;
+  }
+</style>
