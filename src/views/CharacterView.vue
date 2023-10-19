@@ -18,7 +18,6 @@ const mainImg = ref()
 watchEffect(async () => {
   const data = await getCharacter($route.params.id);
   character.value = data.results[0];
-  console.log("🚀 ~ file: CharacterView.vue:20 ~ watchEffect ~ character:", character)
   mainImg.value = `${character.value.thumbnail.path}/standard_xlarge.${character.value.thumbnail.extension}`;
 });
 
@@ -29,7 +28,6 @@ const comics = ref();
 watchEffect(async () => {
   const data = await getComicsFromCharacter($route.params.id);
   comics.value = data.results;
-  console.log("🚀 ~ file: CharacterView.vue:20 ~ watchEffect ~ comics:", comics)
 });
 
 </script>
