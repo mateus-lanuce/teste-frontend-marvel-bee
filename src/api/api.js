@@ -36,7 +36,7 @@ export const getComicsFromCharacter = async (id) => {
 
 export const getComics = async (offset = 0) => {
   const response = await fetch(
-    `${baseUrl}/comics?apikey=${publicKey}&offset=${offset}`,
+    `${baseUrl}/comics?apikey=${publicKey}&offset=${offset}&limit=18`,
   );
   const { data } = await response.json();
   return data;
