@@ -4,6 +4,7 @@ import { Form, Field, ErrorMessage } from 'vee-validate';
 import { vMaska } from "maska"
 import { Modal } from 'bootstrap';
 import * as yup from 'yup';
+import { computed } from 'vue';
 
 const schema = yup.object({
   name: yup.string().required(),
@@ -19,6 +20,10 @@ const onSubmit = (values) => {
   const myModal = new Modal(document.getElementById('contactModal'));
   myModal.show();
 };
+
+const isMobile = computed(() => {
+  return window.innerWidth < 992;
+});
 
 </script>
 
@@ -39,7 +44,7 @@ const onSubmit = (values) => {
       <Form @submit="onSubmit" :validation-schema="schema" v-slot="{ meta }" validate-on-mount>
       
         <div class="row mb-3">
-          <div class="col-4 d-flex flex-column gap-1">
+          <div class="col-12 col-lg-4 d-flex flex-column gap-1">
             <div>
               <label for="name" class="form-label">Name</label>
               <Field 
@@ -60,7 +65,7 @@ const onSubmit = (values) => {
         </div>
 
         <div class="row mb-3">
-          <div class="col-4 d-flex flex-column gap-1">
+          <div class="col-12 col-lg-4 d-flex flex-column gap-1">
             <div>
               <label for="email" class="form-label">Email</label>
               <Field 
@@ -81,7 +86,7 @@ const onSubmit = (values) => {
         </div>
 
         <div class="row mb-3">
-          <div class="col-4 d-flex flex-column gap-1">
+          <div class="col-12 col-lg-4 d-flex flex-column gap-1">
             <div>
               <label for="phone" class="form-label">Phone</label>
               <Field 
@@ -104,7 +109,7 @@ const onSubmit = (values) => {
         </div>
 
         <div class="row mb-3">
-          <div class="col-4 d-flex flex-column gap-1">
+          <div class="col-12 col-lg-4 d-flex flex-column gap-1">
             <div>
               <label for="message" class="form-label">Message</label>
               <Field 
@@ -124,13 +129,14 @@ const onSubmit = (values) => {
           </div>
         </div>
 
-          <div class="col-4">
+          <div class="col-12 col-lg-4">
             <button 
               type="submit" 
-              class="btn btn-primary-red mt-4"
+              class="btn btn-primary-red mt-lg-4"
+              :class="{ 'w-100': isMobile }"
               :disabled="!meta.valid"
             >
-              Submit
+              Send
             </button>
           </div>
 

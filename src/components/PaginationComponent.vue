@@ -32,6 +32,9 @@ const nextPage = () => {
     //entao vai para a proxima pagina
     paginationStore.page++;
   }
+
+  //volta para o topo da pagina
+  window.scrollTo(0, 0);
 };
 
 //funcao para ir para a pagina anterior
@@ -41,6 +44,9 @@ const prevPage = () => {
     //entao vai para a pagina anterior
     paginationStore.page--;
   }
+
+  //volta para o topo da pagina
+  window.scrollTo(0, 0);
 };
 
 //funcao para ir para uma pagina especifica
@@ -50,6 +56,9 @@ const goToPage = (page) => {
     //entao vai para a pagina especifica
     paginationStore.page = page;
   }
+
+  //volta para o topo da pagina
+  window.scrollTo(0, 0);
 };
 
 /**
@@ -92,14 +101,19 @@ const calculatePages = computed(() => {
   return [];
 });
 
+const isMobile = computed(() => {
+  return window.innerWidth < 576;
+});
+
 </script>
 
 <template>
 
-  <div class="d-flex align-items-center justify-content-end gap-3">
+  <div class="d-flex flex-column flex-md-row align-items-center justify-content-end gap-3">
 
     <button 
-      class="btn btn-primary-red text-white" 
+      class="btn btn-primary-red text-white"
+      :class="{ 'w-100': isMobile }" 
       :disabled="paginationStore.page === 1"
       @click="prevPage"
     >
@@ -107,7 +121,20 @@ const calculatePages = computed(() => {
       Previous
     </button>
 
+    <div v-if="isMobile" class="d-flex justify-content-between w-100">
+      <button 
+        v-for="page in calculatePages" 
+        class="btn btn-primary-red text-white"
+        :class="{ 'active-button': paginationStore.page === page }"
+        :key="page"
+        @click="goToPage(page)"
+      >
+        {{ page }}
+      </button>
+    </div>
+
     <button 
+      v-else
       v-for="page in calculatePages" 
       class="btn btn-primary-red text-white"
       :class="{ 'active-button': paginationStore.page === page }"
@@ -119,6 +146,7 @@ const calculatePages = computed(() => {
 
     <button 
       class="btn btn-primary-red text-white" 
+      :class="{ 'w-100': isMobile }"
       :disabled="paginationStore.page === paginationStore.totalPages"
       @click="nextPage"
     >

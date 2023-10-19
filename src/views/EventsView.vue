@@ -45,7 +45,7 @@ watchEffect(async () => {
       </ol>
     </nav>
 
-    <div class="d-flex flex-wrap justify-content-between gap-4">
+    <div class="d-flex flex-column flex-lg-row flex-wrap justify-content-between gap-4">
       <HorizontalCardComponent 
         v-for="event in events" 
         :key="event.id"

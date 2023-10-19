@@ -52,7 +52,7 @@ const formatedDate = computed(() => {
 </script>
 
 <template>
-  <div class="d-flex flex-row gap-3">
+  <div class="d-flex flex-column flex-md-row gap-3">
     <img :src="formatImageURL" class="custom-img" alt="hero logo">
 
     <div class="d-flex flex-column text-uppercase">
@@ -60,7 +60,7 @@ const formatedDate = computed(() => {
       <p class="max-len-text text-overflow-clamp">
         {{ description }}
       </p>
-      <p>
+      <p class="mt-auto">
         <span class="fw-bold">Date of the event:</span> 
         {{ formatedDate }}
       </p>
@@ -93,10 +93,11 @@ const formatedDate = computed(() => {
     display: -webkit-box;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 576px) {
     .custom-img {
-      width: 10rem;
-      height: 10rem;
+      width: 100%;
+      height: 14rem;
+      background-size: cover;
     }
   }
 

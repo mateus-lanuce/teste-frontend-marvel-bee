@@ -17,6 +17,7 @@
 
 .btn-primary-red:disabled {
   @extend .bg-gray-100;
+  border: none;
   
   //desativar o hover
   &:hover {

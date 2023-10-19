@@ -43,7 +43,7 @@ const formatImageURLVertical = computed(() => {
 
 <template>
   <div 
-    class="d-flex flex-column align-items-center max-width-card gap-3"
+    class="d-flex flex-column max-width-card gap-3"
   >
     
     <img v-if="!verticalImage" :src="formatImageURL" class="custom-img" alt="hero logo">
@@ -95,6 +95,15 @@ const formatImageURLVertical = computed(() => {
     .custom-img {
       width: 10rem;
       height: 10rem;
+    }
+
+    .custom-img-vertical {
+      width: 10rem;
+      height: 15rem;
+    }
+
+    .max-width-card {
+      max-width: 10rem;
     }
   }
 
