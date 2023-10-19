@@ -3,12 +3,20 @@
 - Esse Projeto foi Feito por mim [Mateus Lanuce](https://github.com/mateus-lanuce) utilizando vue3 e bootstrap v5, usando os dados da marvel [API](https://developer.marvel.com/docs)
 - Levou aproximadamente 2 dias para ser finalizado, incluindo toda a responsividade, acessibilidade e SEO.
 - O design foi feito de acordo com o figma dado pela [Bee Delivery](https://www.beedelivery.com.br/) - [Figma design](https://www.figma.com/file/b21cB6Ph702fL11DqwoyWP/Teste-Frontend---Bee-Delivery?type=design&node-id=2-2&mode=design&t=3U9mo2tpqc08ckd9-0)
+- Os requisitos bonus a seguir foram atendidos no projeto:
+
+Pagination
+
+Search for characters
+
+Search for comics
 
 ## link para a versão em deploy na vercel
 https://teste-frontend-marvel-bee.vercel.app/
 
 ## Resultado do teste no google lightHouse para esse projeto
-![Google LightHouse test]()
+![Captura de tela 2023-10-19 002112](https://github.com/mateus-lanuce/teste-frontend-marvel-bee/assets/48321080/1833e90d-7520-4430-90a8-c589a708ed70)
+
 
 ## Recommended IDE Setup
 
