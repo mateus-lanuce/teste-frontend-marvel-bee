@@ -14,6 +14,8 @@ const router = useRouter();
 
 const characters = ref(data.results);
 
+const loading = ref(false);
+
 //modificar os valores do store de paginacao
 const paginationStore = usePaginationStore();
 
@@ -33,6 +35,7 @@ const totalCharacter = ref();
 
 //função para fazer a busca de personagens
 const searchCharacters = async () => {
+  loading.value = true;
   //se o input de busca nao estiver vazio
   if (searchCharacter.value !== '') {
     //entao faz a busca pelo nome do personagem
@@ -47,12 +50,13 @@ const searchCharacters = async () => {
 
     characters.value = data.results;
   }
+  loading.value = false;
 };
 
 </script>
 
 <template>
-  <main class="container">
+  <main v-if="!loading" class="container">
 
     <div>
       <nav aria-label="breadcrumb">
@@ -107,4 +111,13 @@ const searchCharacters = async () => {
     />
 
   </main>
+
+  <main v-else class="container">
+    <div class="d-flex justify-content-center align-items-center vh-100">
+      <div class="spinner-border text-primary-red" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </main>
+
 </template>
