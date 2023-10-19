@@ -36,6 +36,7 @@ const closeNavbar = () => {
         <div class="container-fluid">
           <RouterLink 
             to="/"
+            aria-label="Home Link"
           >
             <LogoPrimary width="139" height="56"/>
           </RouterLink>
